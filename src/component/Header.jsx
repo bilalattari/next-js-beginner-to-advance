@@ -26,6 +26,13 @@ export function Header() {
       </Link>
 
       <Link
+        className={`link px-3 ${pathname === "/quotes" ? "active underline" : ""}`}
+        href="/quotes"
+      >
+        Quotes
+      </Link>
+
+      <Link
         className={`link px-3 ${pathname === "/contactus" ? "active underline" : ""}`}
         href="/contactus"
       >
