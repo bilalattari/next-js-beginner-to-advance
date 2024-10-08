@@ -1,10 +1,11 @@
+import prisma from "@/lib/db";
 import Link from "next/link";
 
 export const metadata = {
   title: "NEXT JS BLOGS",
 };
 
-export default function Blogs() {
+export default async function Blogs() {
   const blogs = [
     {
       id: 1,
@@ -42,6 +43,7 @@ export default function Blogs() {
         "A guide to deploying your Next.js app on platforms like Vercel and Netlify.",
     },
   ];
+
 
   return (
     <div className="container mx-auto text-center p-20">
