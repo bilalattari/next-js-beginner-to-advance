@@ -11,11 +11,12 @@ const Quotes = async () => {
   });
 
   if (!quotes.ok) {
-    throw new Error("API is not working");
+    throw new Error("API Not working");
   }
 
   quotes = await quotes.json();
   console.log(quotes);
+
   return (
     <div className="p-10">
       <h1 className="font-bold text-3xl text-center ">Quotes</h1>
