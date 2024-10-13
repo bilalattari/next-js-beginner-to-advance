@@ -42,3 +42,25 @@ export async function POST(request) {
     msg: "Todos Added Successfully.",
   });
 }
+
+export async function PUT(request) {
+  const data = await request.json();
+  console.log("update todo in backend==>", data);
+  const todoInd = todos.findIndex((todo) => todo.id == data.id);
+  todos[todoInd] = data;
+  return Response.json({
+    data: todos,
+    msg: "Todo Updated Successfully.",
+  });
+}
+
+export async function DELETE(request) {
+  const data = await request.json();
+  console.log("delete todo in backend==>", data.id);
+  const todoInd = todos.findIndex((todo) => todo.id == data.id);
+  todos.splice(todoInd, 1);
+  return Response.json({
+    data: todos,
+    msg: "Todo Deleted Successfully.",
+  });
+}
